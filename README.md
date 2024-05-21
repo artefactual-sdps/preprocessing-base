@@ -27,6 +27,7 @@ To create a new preprocessing child workflow project:
   - The Go module name
   - The default Docker image name
   - The Makefile project name and the location of the installed tools
+  - The `appName` in the worker command
 - Update this readme file:
   - Change the heading and initial description
   - Remove the first three sections from the list above and the content
