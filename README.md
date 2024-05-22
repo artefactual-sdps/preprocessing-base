@@ -55,7 +55,7 @@ and related to each other with the namespace, task queue and workflow name.
 
 ### Preprocessing:
 
-The entire configuration for the preprocessing worker:
+The required configuration for the preprocessing worker:
 
 ```toml
 debug = false
@@ -70,6 +70,13 @@ workflowName = "preprocessing"
 
 [worker]
 maxConcurrentSessions = 1
+```
+
+Optional BagIt bag configuration (default values shown):
+
+```toml
+[bagit]
+algorithm = "sha512"
 ```
 
 ### Enduro:

@@ -3,8 +3,10 @@ package workercmd
 import (
 	"context"
 
+	"github.com/artefactual-sdps/temporal-activities/bagit"
 	"github.com/go-logr/logr"
 	"go.artefactual.dev/tools/temporal"
+	temporalsdk_activity "go.temporal.io/sdk/activity"
 	temporalsdk_client "go.temporal.io/sdk/client"
 	temporalsdk_interceptor "go.temporal.io/sdk/interceptor"
 	temporalsdk_worker "go.temporal.io/sdk/worker"
@@ -54,6 +56,11 @@ func (m *Main) Run(ctx context.Context) error {
 	w.RegisterWorkflowWithOptions(
 		workflow.NewPreprocessingWorkflow(m.cfg.SharedPath).Execute,
 		temporalsdk_workflow.RegisterOptions{Name: m.cfg.Temporal.WorkflowName},
+	)
+
+	w.RegisterActivityWithOptions(
+		bagit.NewCreateBagActivity(m.cfg.Bagit).Execute,
+		temporalsdk_activity.RegisterOptions{Name: bagit.CreateBagActivityName},
 	)
 
 	if err := w.Start(); err != nil {
