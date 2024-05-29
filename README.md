@@ -76,7 +76,7 @@ Optional BagIt bag configuration (default values shown):
 
 ```toml
 [bagit]
-algorithm = "sha512"
+checksumAlgorithm = "sha512"
 ```
 
 ### Enduro:
