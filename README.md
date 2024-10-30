@@ -36,7 +36,7 @@ To create a new preprocessing child workflow project:
 ## Repository requirements
 
 This project is configured by default to be able to run the child workflow
-worker iniside the Enduro cluster. For that to work as expected, the projects
+worker inside the Enduro cluster. For that to work as expected, the projects
 based on this repository must contain a `Tiltfile.enduro` file to load only
 the required resources into the cluster. One of those resources must be a
 persistent volume claim called `preprocessing-pvc` that will be mounted in
@@ -53,7 +53,7 @@ The preprocessing workers need to share the filesystem with Enduro's a3m or
 Archivematica workers. They must be connected to the same Temporal server
 and related to each other with the namespace, task queue and workflow name.
 
-### Preprocessing:
+### Preprocessing
 
 The required configuration for the preprocessing worker:
 
@@ -79,7 +79,7 @@ Optional BagIt bag configuration (default values shown):
 checksumAlgorithm = "sha512"
 ```
 
-### Enduro:
+### Enduro
 
 The preprocessing section for Enduro's configuration:
 
@@ -108,7 +108,7 @@ in a Kubernetes cluster. It has been tested with k3d, Minikube and Kind.
 
 A local Kubernetes cluster:
 
-- [k3d] _(recomended, used in CI)_
+- [k3d] _(recommended, used in CI)_
 - [Minikube] _(tested)_
 - [Kind] _(tested)_
 
@@ -123,7 +123,7 @@ non-root user is **different** from running the docker daemon as a non-root user
 
 ### Requirements for development
 
-While we run the services inside a Kubernetes cluster we recomend installing
+While we run the services inside a Kubernetes cluster we recommend installing
 Go and other tools locally to ease the development process.
 
 - [Go] (1.22+)
@@ -209,7 +209,7 @@ To delete the volumes immediately, you can delete the cluster.
 
 ### Delete the cluster
 
-Deleting the cluster will remove all the resources immediatly, deleting
+Deleting the cluster will remove all the resources immediately, deleting
 cluster container from the host. With k3d, run:
 
 ```bash
