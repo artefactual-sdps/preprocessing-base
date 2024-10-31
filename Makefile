@@ -92,6 +92,9 @@ list-ignored-packages: # @HELP Print a list of packages ignored in testing.
 list-ignored-packages:
 	$(foreach PACKAGE,$(TEST_IGNORED_PACKAGES),@echo $(PACKAGE)$(NEWLINE))
 
+mod-tidy-check: # @HELP Check that mod files are tidy.
+	go mod tidy -diff
+
 pre-commit: # @HELP Check that code is ready to commit.
 pre-commit:
 	ENDURO_PP_INTEGRATION_TEST=1 $(MAKE) -j \
