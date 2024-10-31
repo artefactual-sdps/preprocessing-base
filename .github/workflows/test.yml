@@ -17,6 +17,8 @@ jobs:
       with:
         go-version-file: go.mod
         cache: true
+    - name: Check mod tidy
+      run: make mod-tidy-check
     - name: Test
       run: make test-ci
     - name: Determine skip-codecov
