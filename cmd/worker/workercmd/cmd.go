@@ -3,7 +3,7 @@ package workercmd
 import (
 	"context"
 
-	"github.com/artefactual-sdps/temporal-activities/bagit"
+	"github.com/artefactual-sdps/temporal-activities/bagcreate"
 	"github.com/go-logr/logr"
 	"go.artefactual.dev/tools/temporal"
 	temporalsdk_activity "go.temporal.io/sdk/activity"
@@ -59,8 +59,8 @@ func (m *Main) Run(ctx context.Context) error {
 	)
 
 	w.RegisterActivityWithOptions(
-		bagit.NewCreateBagActivity(m.cfg.Bagit).Execute,
-		temporalsdk_activity.RegisterOptions{Name: bagit.CreateBagActivityName},
+		bagcreate.New(m.cfg.Bagit).Execute,
+		temporalsdk_activity.RegisterOptions{Name: bagcreate.Name},
 	)
 
 	if err := w.Start(); err != nil {
