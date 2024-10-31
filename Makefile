@@ -15,6 +15,7 @@ else
 endif
 
 include hack/make/bootstrap.mk
+include hack/make/dep_go_enum.mk
 include hack/make/dep_golangci_lint.mk
 include hack/make/dep_golines.mk
 include hack/make/dep_gomajor.mk
@@ -22,6 +23,7 @@ include hack/make/dep_gosec.mk
 include hack/make/dep_gotestsum.mk
 include hack/make/dep_shfmt.mk
 include hack/make/dep_tparse.mk
+include hack/make/enums.mk
 
 # Lazy-evaluated list of tools.
 TOOLS = $(GOLANGCI_LINT) \
@@ -37,7 +39,8 @@ define NEWLINE
 endef
 
 IGNORED_PACKAGES := \
-	github.com/artefactual-sdps/preprocessing-base/hack/%
+	github.com/artefactual-sdps/preprocessing-base/hack/% \
+	github.com/artefactual-sdps/preprocessing-sfa/internal/enums
 PACKAGES := $(shell go list ./...)
 TEST_PACKAGES := $(filter-out $(IGNORED_PACKAGES),$(PACKAGES))
 TEST_IGNORED_PACKAGES := $(filter $(IGNORED_PACKAGES),$(PACKAGES))
