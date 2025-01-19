@@ -1,7 +1,7 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/artefactual-sdps/temporal-activities v0.0.0-20241018212855-8ea34d29bdf4 h1:WF95IOkZRVSCST/26SAqPYsUrtUuJpavBht6lvdeKl0=
-github.com/artefactual-sdps/temporal-activities v0.0.0-20241018212855-8ea34d29bdf4/go.mod h1:FVh79rCGNlUU1QnioAU+lrSjLqrA1PJFYKIhWPsmyug=
+github.com/artefactual-sdps/temporal-activities v0.0.0-20250116225551-b0b1966e3e19 h1:HyNhEn7eTnbG9BhGcPgbVwHA7JvVEggcxQ/W4ehNyfw=
+github.com/artefactual-sdps/temporal-activities v0.0.0-20250116225551-b0b1966e3e19/go.mod h1:azRTgEUYLwKy9cLboLf4QySx1/ihVWoT/XT15zfUau8=
 github.com/benbjohnson/clock v1.1.0/go.mod h1:J11/hYXuz8f4ySSvYwY0FKfm+ezbsZBKZxNJlLklBHA=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
