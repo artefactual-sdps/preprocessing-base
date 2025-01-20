@@ -3,7 +3,7 @@ module github.com/artefactual-sdps/preprocessing-base
 go 1.23.2
 
 require (
-	github.com/artefactual-sdps/temporal-activities v0.0.0-20241018212855-8ea34d29bdf4
+	github.com/artefactual-sdps/temporal-activities v0.0.0-20250116225551-b0b1966e3e19
 	github.com/go-logr/logr v1.4.2
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.18.2
