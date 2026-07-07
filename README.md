@@ -61,27 +61,25 @@ setup.
 
 ## Configuration
 
-The required configuration for the default `custom-enduro-worker`:
+Example configuration for the default `custom-enduro-worker`:
 
 ```toml
 debug = false
 verbosity = 0
-sharedPath = "/home/enduro/shared"
 
 [temporal]
 address = "temporal-frontend.enduro-sdps:7233"
 namespace = "default"
-taskQueue = "preprocessing"
-workflowName = "preprocessing"
 
 [worker]
+taskQueue = "custom-enduro"
 maxConcurrentSessions = 1
-```
 
-Optional BagIt bag configuration:
+[preprocessing]
+workflowName = "preprocessing"
+sharedPath = "/home/enduro/shared"
 
-```toml
-[bagit]
+[preprocessing.bagCreate]
 checksumAlgorithm = "sha512"
 ```
 
@@ -93,7 +91,7 @@ The child workflow section for Enduro's configuration:
 [[childWorkflows]]
 type = "preprocessing"
 namespace = "default"
-taskQueue = "preprocessing"
+taskQueue = "custom-enduro"
 workflowName = "preprocessing"
 extract = false
 sharedPath = "/home/enduro/preprocessing"
